@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "packages": {
+    "com.valvesoftware.unity.openvr": {
+      "tarball": {
+        "hash": "26688a8d6a01",
+        "mtime": 1738032264413,
+        "size": 21351613,
+        "localPath": "C:\\Users\\micah_chubb\\Downloads\\com.valvesoftware.unity.openvr-1.2.3.tgz"
+      }
+    }
+  }
+}

@@ -22,3 +22,13 @@ To aid in combining projects together later it is important that you help mainta
 * Copy the VR script basis in
 * Adjust as necessary
 * Put in your data folder
+
+## VR Fallback not working
+* Go to Window > Package Manager
+* Select OpenVR XR Plugin
+* Remove the package
+### Note: You will need to re-add it to run on the VR computer
+* Go to Window > Package Manager
+* Click the + icon in the top left
+* Select "Add package from Tarball"
+* Find a copy of "com.valvesoftware.unity.openvr-1.2.3.tgz" and select it (would recommend having this saved on your USB drive)

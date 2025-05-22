@@ -222,6 +222,12 @@ namespace Valve.VR.InteractionSystem
 			titleText.color = titleColor;
 		}
 
+		/*
+		void delayActivating()
+		{
+			GameObject.Find("Player").SetActive(true);
+		}
+  		*/
 
 		//-------------------------------------------------
 		public void TeleportToScene()
@@ -232,6 +238,8 @@ namespace Valve.VR.InteractionSystem
 				SceneManager.LoadScene(sceneName: switchToScene);
 				//Resets the player position
 				GameObject.Find("Player").transform.position = spawnPosition;
+    				//GameObject.Find("Player").SetActive(false);
+				//Invoke("delayActivating",0.5f);
 			}
 			else
 			{

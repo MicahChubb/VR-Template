@@ -1,4 +1,4 @@
-﻿//======= Copyright (c) Valve Corporation, All rights reserved. ===============
+//======= Copyright (c) Valve Corporation, All rights reserved. ===============
 //
 // Purpose: Player interface used to query HMD transforms and VR hands
 //
@@ -41,6 +41,8 @@ namespace Valve.VR.InteractionSystem
         public SteamVR_Action_Boolean headsetOnHead = SteamVR_Input.GetBooleanAction("HeadsetOnHead");
 
 		public bool allowToggleTo2D = true;
+
+		public bool forceFallback = true;
 
 
 		//-------------------------------------------------
@@ -275,6 +277,12 @@ namespace Valve.VR.InteractionSystem
 		{
 			_instance = this;
 
+            if (forceFallback)
+            {
+				ActivateRig( rig2DFallback );
+				yield return null;
+            }
+
             while (SteamVR.initializedState == SteamVR.InitializedStates.None || SteamVR.initializedState == SteamVR.InitializedStates.Initializing)
                 yield return null;
 
@@ -352,7 +360,6 @@ namespace Valve.VR.InteractionSystem
 				{
                     /*
 					Hand.HandType guessHandType = hand.currentHandType;
-
 					if ( guessHandType == Hand.HandType.Left )
 					{
 						Gizmos.DrawIcon( hand.transform.position, "vr_interaction_system_left_hand_question.png" );
